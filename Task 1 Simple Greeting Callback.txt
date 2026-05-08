@@ -1,0 +1,53 @@
+Task 1: Simple Greeting Callback
+
+
+function greetUser(name, callback) {
+    callback(name);
+}
+
+function greeting(name) {
+    console.log("Hello, " + name + "!");
+}
+greetUser("Sneha", greeting);
+
+
+Output
+Hello, Sneha!
+
+
+Task 2: Calculator with Callback
+
+
+function calculate(num1, num2, callback) {
+    let result = num1 + num2;
+    callback(result);
+}
+
+function displayResult(result) {
+    console.log("Result is: " + result);
+}
+calculate(10, 20, displayResult);
+
+
+Output
+Result is: 30
+
+
+Task 3: Delay Message (Async Callback)
+
+function showMessage(message, callback) {
+
+    setTimeout(() => {
+        console.log(message);
+        callback();
+    }, 3000);
+}
+
+function completed() {
+    console.log("Message displayed successfully.");
+}
+showMessage("Welcome to JavaScript Callbacks!", completed);
+
+
+Output After 3 Seconds
+Welcome to JavaScript Callbacks!Message displayed successfully.
